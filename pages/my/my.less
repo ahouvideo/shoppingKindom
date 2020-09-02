@@ -1,0 +1,146 @@
+page{background-color:#f3f3f3;margin-left:auto;}
+/**/ 
+.info{
+
+    height: 45vh;
+    overflow: hidden;
+    .imgsBg{
+        
+        position: relative;
+        // 背景 css3滤镜技术
+        
+        
+        .bg{
+            height: 45vh;
+            // 高斯模糊
+            -webkit-filter:blur(5px);  
+            filter:blur(10px); 
+        }
+        
+        // 头像
+        .userImg{
+                position: absolute;
+                // 居中
+                left: 54%;
+                top: 30%;
+                transform: translateX(-50%);
+                text-align: center;
+            .userIcon{
+                width: 160rpx;
+                height: 160rpx;
+                border-radius: 50%;
+            
+            }
+            .userName{
+                color: #fff;
+                display: block;
+                padding: 40rpx 0;
+                font-size: 34rpx;
+            }
+        }
+    }
+    .userBtn{
+        button{
+            width: 50%;
+            margin-top: 30%;
+        }
+    }
+}
+
+.list {
+    position: relative;
+    .main {
+        color: #666;
+        position: absolute;
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -40rpx;
+        padding-bottom: 40rpx;
+        // 历史纪录
+      .historyWrap {
+        background-color: #fff;
+        display: flex;
+
+        navigator {
+            float: 1;
+            text-align: center;
+            padding: 10rpx 0;
+          .num {
+            color: var(--themeColor);
+          }
+          .name {
+            font-size: 28rpx;
+          }
+        }
+      }
+      //我的订单   
+      .orderList {
+          background-color: #fff;
+          margin-top: 20rpx;
+        .myOrder {
+            padding: 20rpx;
+            border-bottom: 1rpx solid #ccc;
+        }
+        .oderContent {
+            display: flex;
+          navigator {
+            padding: 10rpx 0;
+            flex: 1;
+            text-align:center ;
+            .iconfont{
+                font-size: 40rpx;
+
+                color: var(--themeColor);
+            }
+            .name {
+                padding: 10rpx 0;
+
+                font-size: 30rpx;
+                
+            }
+          }
+        }
+      }
+      //地址管理
+      .adressWrap {
+        margin-top: 30rpx;
+        background-color: #fff;
+        padding: 20rpx;
+      }
+      //应用信息联系反馈   
+      .appInfo {
+        margin-top: 30rpx;
+        background-color: #fff;
+        .appItem {
+            padding: 20rpx;
+            border-bottom: 1rpx solid #ccc;
+          
+        }
+        .contact{
+            // padding:20rpx 0;
+            display: flex;
+            justify-content:space-between;
+            .iconfont{
+              font-size: 36rpx;
+            }
+      
+        }
+      }
+      //推荐应用   
+      .recommend {
+        margin-top: 30rpx;
+        background-color: #fff;
+        padding: 20rpx;
+        position: relative;
+        button{
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+        }
+      }
+    }
+}

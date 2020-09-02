@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "searchInput":"../../components/searchInput/searchInput"
+    
+  },
+    "navigationBarTitleText": "ShoppingKingdom🛒"
+    
+
+}

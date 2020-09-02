@@ -1,0 +1,80 @@
+<view class="info">
+    <view class="imgsBg" wx:if="{{userInfo.avatarUrl}}">
+        <!-- 背景 -->
+        <image class="bg" src='{{userInfo.avatarUrl}}'></image>
+        <!-- 头像 -->
+        <view class='userImg'>
+            <image class="userIcon" src="{{userInfo.avatarUrl}}" mode="widthFix" lazy-load="false"></image>
+            <text class="userName">{{userInfo.nickName}}</text>
+        </view>
+    </view>
+    <!-- 点击微信授权 -->
+    <view class="userBtn" wx:else>
+        <navigator url="/pages/login/login">
+            <button type="primary" plain>点击微信授权登录</button>
+        </navigator>
+    </view>
+</view>
+<view class="list">
+    <view class="main">
+        <!-- 历史足迹 -->
+        <view class="historyWrap">
+            <navigator>
+                <view class="num">0</view>
+                <view class="name">收藏的店铺</view>
+            </navigator>
+            <navigator url="/pages/collect/collect">
+                <view class="num">{{collectNum}}</view>
+                <view class="name">收藏的商品</view>
+            </navigator>
+            <navigator>
+                <view class="num">0</view>
+                <view class="name">关注的商品</view>
+            </navigator>
+            <navigator url="/pages/history/history">
+                <view class="num">{{historyNum}}</view>
+                <view class="name">我的足迹</view>
+            </navigator>
+        </view>
+        <!-- 我的订单 -->
+        <view class="orderList">
+            <view class="myOrder">我的订单</view>
+            <view class="oderContent">
+                <navigator url="/pages/order/order?type=1">
+                    <view class="iconfont icon-dingdanliebiao"></view>
+                    <view class="name">全部订单</view>
+                </navigator>
+                <navigator  url="/pages/order/order?type=2">
+                    <view class="iconfont icon-payment"></view>
+                    <view class="name">待付款</view>
+                </navigator>
+                <navigator  url="/pages/order/order?type=3">
+                    <view class="iconfont icon-shouhuo"></view>
+                    <view class="name">待发货</view>
+                </navigator>
+                <navigator>
+                    <view class="iconfont icon-zhifu"></view>
+                    <view class="name">退款/退货</view>
+                </navigator>
+            </view>
+        </view>
+        <!-- 收货地址管理 -->
+        <view class="adressWrap iconfont icon-dizhiguanli">收货地址管理</view>
+        
+        <!-- 应用信息相关 -->
+        <view class="appInfo">
+            <view class="appItem contact ">
+                <view class="iconfont icon-icon_kefu" >
+                <text>联系客服</text></view>
+                <text bindtap='goPhone'>{{phone}}</text>
+                
+            </view>
+            
+            <navigator url="/pages/feedback/feedback" open-type="navigate" class="appItem iconfont icon-yijianfankui">意见反馈</navigator>
+        
+            <view class="appItem iconfont icon-guanyu">关于我们</view>
+        </view>
+        <!-- 推荐 -->
+        <view class="recommend iconfont icon-fenxiang"><button open-type="share"></button>推荐应用</view>
+    </view>
+</view>

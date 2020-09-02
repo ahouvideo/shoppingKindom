@@ -1,0 +1,15 @@
+<view class="tabs">
+    <!-- 标签名  激活选中类型用isActive来标识-->
+    <view class="tabs_title">
+        <view class="title_item {{item.isActive?'active':''}}" wx:for="{{tabs}}" wx:key="id" bindtap='toggle' data-index='{{index}}'>
+            {{item.value}}
+        </view>
+    </view>
+
+    <!-- 显示内容 使用插槽solt 根据父元素的 Tabs组件-->
+    <view class="tabs_content">
+        
+        <slot></slot>
+
+    </view>
+</view>

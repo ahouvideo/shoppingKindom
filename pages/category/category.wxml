@@ -1,0 +1,52 @@
+<view class="cates"> 
+    <searchInput ></searchInput> 
+
+    <view class="catesContent">
+        <!-- 左侧菜单 -->
+        
+            <scroll-view class="leftItem" scroll-x="false" scroll-y="true" >
+
+                <view class="menu {{index===currentIndex?'active':''}}" bindtap='leftClick' data-index='{{index}}' wx:for="{{leftMenu}}" wx:key="*this">
+                    {{item}}
+                </view>
+
+            </scroll-view>
+        
+
+        <!-- 右侧商品 -->
+    
+            <scroll-view class="rightContent "  scroll-y scroll-top="{{scrollTop}}">
+
+                <view class="rightItem" wx:for="{{rightList}}"  wx:for-item="item1" wx:for-index="index1"
+                wx:key="menu_index">
+
+                    <!-- 标题 -->
+                    <view class="goodsTitle">
+                        <text class="delimiter">/</text>
+                        <text class="title">{{item1.cat_name}}</text>
+                        <text class="delimiter">/</text>
+                    </view>
+                    
+                    <!-- 列表 有超链接 url带参数跳转到商品列表goods_list-->
+                    <view class="goodsList">
+                        <navigator class="" wx:for="{{item1.children}}" wx:for-item="item2" wx:for-index="index2" wx:key="cat_id" url="/pages/goods_list/goods_list?cid={{item2.cat_id}}" >
+                            <!-- 商品图片 -->
+                            <image class="" src="{{item2.cat_icon}}" mode="widthFix" lazy-load="true" />
+                            <!-- 商品名称 -->
+                            <view class="goodsName">{{item2.cat_name}}</view>
+                                
+                            
+                              
+                        </navigator>
+                          
+                    </view>
+
+                </view>
+
+            </scroll-view>
+
+        
+    </view>
+</view>
+    
+

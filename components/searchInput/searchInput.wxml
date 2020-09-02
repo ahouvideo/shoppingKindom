@@ -1,0 +1,10 @@
+
+<view class="search_input">
+    <!-- open-type跳转到非navibar  -->
+    <navigator class="navigator" url="/pages/search/search" open-type="navigate">
+        <!-- <view class=""></view> -->
+        <text class="iconfont icon-sousuo">搜索🔍</text>
+            
+        
+    </navigator>
+</view>

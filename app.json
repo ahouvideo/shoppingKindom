@@ -1,0 +1,62 @@
+{
+  "pages": [
+    "pages/my/my",
+    "pages/history/history",
+    "pages/index/index",
+    "pages/feedback/feedback",
+    "pages/login/login",
+    "pages/auth/auth",
+    "pages/pay/pay",
+    "pages/cart/cart",
+    "pages/category/category",
+    "pages/goods_detail/goods_detail",
+    "pages/goods_list/goods_list",
+    "pages/collect/collect",
+    "pages/order/order",
+    "pages/search/search",
+    "pages/message/message",
+    "pages/address/addressList/addressList",
+    "pages/address/addAddress/addAddress"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#5485a3",
+    "navigationBarTitleText": "ShoppingKingdom🛒",
+    "navigationBarTextStyle": "white"
+  },
+  
+  "tabBar": {
+    "color": "#cccccc",
+    "selectedColor": "#5485a3",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "icons/home.png",
+        "selectedIconPath": "icons/homeActive.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "分类",
+        "iconPath": "icons/category.png",
+        "selectedIconPath": "icons/categoryActive.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "icons/cart.png",
+        "selectedIconPath": "icons/cartActive.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "icons/my.png",
+        "selectedIconPath": "icons/myActive.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

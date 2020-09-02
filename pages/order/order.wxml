@@ -1,0 +1,56 @@
+<view class="wrap">
+    <Tabs tabs='{{tabs}}' bindtabsItemChange='receiveTabs'>
+
+        <view class="orderList" >
+            <view class="content" wx:for="{{orderList}}" wx:key="order_id">
+                <view class="orderNum">
+                    <view class="ordertext">订单日期：</view>
+                    <!-- {{new Date()}}2020-07-18 14:12:35 -->
+                    <view class="orderTime">{{item[0].createTime}}</view>
+                </view>
+                <view class="item" wx:for="{{item}}" wx:for-item="item2" wx:for-index="index2" wx:key="index_id">
+
+                    <!-- 商品 -->
+                    <view class="orderItem">
+                        <!-- 商品图片 -->
+                        <navigator url="/pages/goods_detail/goods_detail?goods_id={{item2.goods_id}}" class="productPic">
+                            <image class="" src="{{item2.goods_small_logo}}" mode="widthFix" lazy-load="true" />
+                        </navigator>
+                        <!-- 商品名字描述 步进器 -->
+                        <view class="productInfo">
+                            <!-- 商品标题 -->
+                            <navigator url="/pages/goods_detail/goods_detail?goods_id={{item2.goods_id}}" class="goodsTitle more-text">{{item2.goods_name}}</navigator>
+                            <!-- 商品价格 步进器 -->
+                            <view class="goodsContrl">
+                                <view class="goodsPrice">￥{{item2.goods_price}}</view>
+                                <!-- 步进器数量 -->
+                                <view class="goodsTool">
+                                    <view class="goodsNum">X{{item2.num}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    
+                </view>
+
+                <!-- 总计 -->
+                <view class="total">
+                   <view>
+                       共<text class="txt">{{item[0].totalNum}}</text>件商品
+                   </view> 
+                   <view>
+                       总计：<text class="txt">￥{{item[0].totalPrice}}</text> 
+                   </view>
+                       
+                </view>
+
+                <view class="btn">
+                    <van-button type="primary" size="small">未付款</van-button>
+                    <van-button type="warning" size="small">待收货</van-button>
+                    <van-button type="danger" size="small">退货/退款</van-button>
+                </view>
+
+            </view>
+        </view>
+    </Tabs>
+</view>

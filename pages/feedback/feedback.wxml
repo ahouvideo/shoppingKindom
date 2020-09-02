@@ -1,0 +1,33 @@
+<view class="feedback">
+    <Tabs tabs='{{tabs}}' bindtabsItemChange='receiveTabs'>
+        <view class="feedMain">
+            <view class="feedTitle">问题的种类：</view>
+
+            <view class="feedTips">
+                <text>功能建议</text>
+                <text>购买遇到问题</text>
+                <text>性能问题</text>
+                <text>其他</text>
+            </view>
+
+            <view class="feedContent">
+                <textarea value='{{textValue}}' bindinput="textInput" placeholder="请描述一下您遇到的问题"></textarea>
+                <view class="publicImg">
+                    <button bindtap='chooseImg'>+</button>
+                <!-- 图片组件view控制样式 数组存储  如果是简单索引key='*this'-->
+                    <view class="imgBox" wx:for="{{selectImgs}}" wx:key="*this" bindtap='removeImg' data-index='{{index}}'>
+                        <upImgs src='{{item}}'></upImgs>
+                    </view>
+                        
+                </view>
+            </view>
+            <view class="formBtn">
+                <!-- 表单提交 -->
+                <button bindtap='submitForm' type="warn">
+                <icon  type="success_no_circle" color="white" size="23">
+                
+            </icon>
+               提交</button></view>
+        </view>
+    </Tabs>
+</view>

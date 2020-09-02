@@ -1,0 +1,49 @@
+<view class="collect">
+  <Tabs tabs='{{tabs}}' bindtabsItemChange='receiveTabs'>
+    <block wx:if="{{tabs[0].isActive}}">
+      <view class="main">
+        <view class="title">
+          <text class="collectTips active">全部</text>
+          <text class="collectTips ">正在热卖</text>
+          <text class="collectTips ">即将上线</text>
+        </view>
+        <view class="collectList">
+          <navigator class="goodsItem" wx:for="{{collects}}" wx:key="goods_id" url='/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}'>
+            <!-- 左图  有可能无图片使用默认图片 -->
+            <view class="goodsImg">
+              <image class="" src="{{item.goods_small_logo?item.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}" mode="widthFix" lazy-load="true"></image>
+            </view>
+            <!-- 右标题 价格 内容 -->
+            <view class="goodsContent">
+              <view class="goodsName more-text">{{item.goods_name}}</view>
+              <view class="goodsPrice">￥{{item.goods_price}}</view>
+            </view>
+          </navigator>
+        </view>
+      </view>
+    </block>
+
+    <block wx:if="{{tabs[3].isActive}}">
+      <view class="main">
+        <view class="title">
+          <text class="collectTips active">全部</text>
+          <text class="collectTips ">正在热卖</text>
+          <text class="collectTips ">即将上线</text>
+        </view>
+        <view class="collectList">
+          <navigator class="goodsItem" wx:for="{{history}}" wx:key="goods_id" url='/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}'>
+            <!-- 左图  有可能无图片使用默认图片 -->
+            <view class="goodsImg">
+              <image class="" src="{{item.goods_small_logo?item.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}" mode="widthFix" lazy-load="true"></image>
+            </view>
+            <!-- 右标题 价格 内容 -->
+            <view class="goodsContent">
+              <view class="goodsName more-text">{{item.goods_name}}</view>
+              <view class="goodsPrice">￥{{item.goods_price}}</view>
+            </view>
+          </navigator>
+        </view>
+      </view>
+    </block>
+  </Tabs>
+</view>

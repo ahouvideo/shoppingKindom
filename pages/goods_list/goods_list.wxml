@@ -1,0 +1,79 @@
+<view class="goodsList">
+    <searchInput ></searchInput>
+    <!-- 传递tabs属性 监听自定义事件tabsItemChange 的父组件方法receiveTabs   使用插槽slot显示内容-->
+    <Tabs tabs='{{tabs}}' bindtabsItemChange='receiveTabs'>
+        <!-- 111 --><!-- 如果第0项被 选中就显示0 -->
+        
+    <!-- <block wx:if="{{tabs[0].isActive}}">0</block> -->
+        <block wx:if="{{tabs[0].isActive}}">
+            <view class="firstTab">
+                <!-- 跳转到详情页 带参数goods_id跳转 -->
+                <navigator class="goodsItem" wx:for="{{goodsLists}}" wx:key="goods_id" url='/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}'>
+                    <!-- 左图  有可能无图片使用默认图片-->
+                    <view class="goodsImg">
+                        <image class="" src="{{item.goods_small_logo?item.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}" mode="widthFix" lazy-load="true" >
+                            
+                        </image>
+                    </view>
+
+
+                    <!-- 右标题 价格 内容 -->
+                    <view class="goodsContent">
+                        <view class="goodsName more-text">{{item.goods_name}}</view>
+                        <view class="goodsPrice">￥{{item.goods_price}}</view>
+                    </view>
+                </navigator>
+                  
+            </view>
+        </block>
+
+        <block wx:elif="{{tabs[1].isActive}}">
+            <view class="firstTab">
+                <!-- 跳转到详情页 带参数goods_id跳转 -->
+                <navigator class="goodsItem" wx:for="{{goodsHots}}" wx:key="goods_id" url='/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}'>
+                    <!-- 左图  有可能无图片使用默认图片-->
+                    <view class="goodsImg">
+                        <image class="" src="{{item.goods_small_logo?item.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}" mode="widthFix" lazy-load="true" >
+                            
+                        </image>
+                    </view>
+
+
+                    <!-- 右标题 价格 内容 -->
+                    <view class="goodsContent">
+                        <view class="goodsName more-text">{{item.goods_name}}</view>
+                        <view class="goodsPrice">￥{{item.goods_price}}</view>
+                    </view>
+                </navigator>
+                  
+            </view>
+        </block>
+
+        <block wx:elif="{{tabs[2].isActive}}">
+            <view class="firstTab">
+                <!-- 跳转到详情页 带参数goods_id跳转 -->
+                <navigator class="goodsItem" wx:for="{{goodsPrices}}" wx:key="goods_id" url='/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}'>
+                    <!-- 左图  有可能无图片使用默认图片-->
+                    <view class="goodsImg">
+                        <image class="" src="{{item.goods_small_logo?item.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}" mode="widthFix" lazy-load="true" >
+                            
+                        </image>
+                    </view>
+
+
+                    <!-- 右标题 价格 内容 -->
+                    <view class="goodsContent">
+                        <view class="goodsName more-text">{{item.goods_name}}</view>
+                        <view class="goodsPrice">￥{{item.goods_price}}</view>
+                    </view>
+                </navigator>
+                  
+            </view>
+        </block>
+            
+        
+    </Tabs>
+    
+        
+    
+</view>

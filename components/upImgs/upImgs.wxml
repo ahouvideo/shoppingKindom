@@ -1,0 +1,7 @@
+<view class="upImg">
+    <!-- <image src="https://s1.ax1x.com/2020/08/31/dXtQ7F.png"></image> -->
+    <image src="{{src}}"></image>
+        
+    <icon type="clear" size="23" color="red"></icon>
+        
+</view>

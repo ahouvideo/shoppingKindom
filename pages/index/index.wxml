@@ -1,0 +1,42 @@
+<!-- 搜索框 -->
+<view class="tao_index">
+    <!-- 搜索框  开始 -->
+    <searchInput></searchInput>
+    <!-- 搜索框  结束 -->
+</view>
+<!-- 轮播图  开始 -->
+<view class="banner">
+    <swiper autoplay="{{autoplay}}" interval="{{interval}}" circular="{{circular}}" indicator-dots="{{indicatorDots}}">
+        <block wx:for="{{bannerList}}" wx:key="goods_id">
+            <swiper-item>
+                <navigator url="{{item.navigator_url}}">
+                    <image class="" mode="center" src="{{item.image_src}}" mode="widthFix" lazy-load="true" binderror="" bindload=""></image>
+                </navigator>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+<!-- 轮播图  结束 -->
+<!-- 分类 在底部导航存在switchTab-->
+<view class='category clearfix'>
+    <navigator url="/pages/category/category" open-type="switchTab" hover-class="none" wx:for="{{categoryArr}}" wx:key="category_name">
+        <image src="{{item.image_src}}" mode="widthFix"></image>
+    </navigator>
+</view>
+<!-- 分类  结束 -->
+<!-- 楼层 -->
+<view class="floor">
+    <view class="items" wx:for="{{floorList}}" wx:for-item="item1" wx:for-index="index1" wx:key="floor_title">
+        <!-- 标题 -->
+        <view class="floorTitle">
+            <image class="" src="{{item1.floor_title.image_src}}" mode="widthFix" lazy-load="true"></image>
+        </view>
+        <!-- 内容 -->
+        <view class="floorContent">
+            <navigator wx:for="{{item1.product_list}}" wx:for-item="item2" wx:for-index="index2" wx:key="item2_name"  
+            url="{{item2.navigator_url}}">
+                <image src="{{item2.image_src}}" mode="{{index2===0?'widthFix':'scaleToFill'}}"></image>
+            </navigator>
+        </view>
+    </view>
+</view>
